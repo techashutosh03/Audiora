@@ -1,0 +1,45 @@
+/* Player specific styling & range inputs */
+.player-progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  transition: height 0.15s ease;
+  cursor: pointer;
+}
+
+.player-progress-bar:hover {
+  height: 6px;
+}
+
+.player-progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+  cursor: pointer;
+}
+
+/* Audio Visualizer Bars Animation */
+.visualizer-bar {
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #818cf8 0%, #c084fc 100%);
+  animation: pulse-bar 1.2s ease-in-out infinite alternate;
+}
+
+.visualizer-bar:nth-child(1) { animation-delay: 0.1s; height: 40%; }
+.visualizer-bar:nth-child(2) { animation-delay: 0.3s; height: 80%; }
+.visualizer-bar:nth-child(3) { animation-delay: 0.2s; height: 60%; }
+.visualizer-bar:nth-child(4) { animation-delay: 0.4s; height: 100%; }
+
+@keyframes pulse-bar {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
